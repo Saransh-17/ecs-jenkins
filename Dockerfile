@@ -1,4 +1,6 @@
 FROM php:8.1-apache
-RUN apt update && \
-echo "hello" > /var/www/html/index.html
+RUN apt update
+WORKDIR /var/www/html
+COPY . .
 CMD ["apache2-foreground"]
+
